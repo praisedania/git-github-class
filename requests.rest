@@ -1,0 +1,22 @@
+POST http://localhost:8000/signup
+Content-Type: application/json
+
+{"firstname":"praise",
+"lastname":"dania",
+"email":"dania@gmail.com",
+"pass":"987",
+"gender":"female"}
+
+
+
+###
+GET http://localhost:8000/login
+Content-Type: application/json
+
+{"email":"dania@gmail.com",
+"pass":"987"}
+
+
+###
+GET http://localhost:8000/getUser/1
+

@@ -13,12 +13,12 @@ const transporter = nodemailer.createTransport({
   
   const message = {
       from:"praisdania@gmail.com" , 
-      to: "kennedymarvellous001@gmail.com",
+      to: "omodania393@gmail.com",
       subject: "testing",
       text: "successfully sent"};
  
       transporter.sendMail(message,function(error, result){
-       if(err){console.log(error)}
+       if(error){console.log(error)}
          else{console.log(result)}
        }
       );

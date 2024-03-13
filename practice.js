@@ -58,6 +58,12 @@ app.post("/signup", bodyparser.json(), function (req, res) {
     res.send(result);
   });
 });
+app.get("/test", bodyparser.json(), function (req, res) {
+
+
+    res.send("yes");
+
+});
 
 app.get("/login", bodyparser.json(), function (req, res) {
   var sql = `SELECT * FROM users

@@ -19,10 +19,6 @@ Content-Type: application/json
 
 ###
 GET https://git-github-class-1.onrender.com/getUser/1
-{  "from":"praisdania@gmail.com" , 
-  "to": "developerjohnpaul@gmail.com",
-  "subject": "testing",
-  "body": "new mail from",}
 
   ###
   

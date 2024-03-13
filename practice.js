@@ -1,7 +1,12 @@
+/********************IMPORT ********************/
+
 const express = require("express");
 const bodyparser = require("body-parser");
 const mysql = require("mysql2");
+const multer = require ("multer");
 
+
+/********************FUNCTION********************/
 const app = express();
 const con = mysql.createPool({
   host: "127.0.0.1",
@@ -10,6 +15,13 @@ const con = mysql.createPool({
   database: "learning",
   port: "3306",
 });
+const upload = multer({
+  dest:"./upload/images",
+})
+
+
+/********************ENDPOINT ********************/
+
 app.post("/signup", bodyparser.json(), function (req, res) {
   var sql = `INSERT INTO users(firstname,lastname,email,pass,gender)
   VALUES('${req.body.firstname}','${req.body.lastname}','${req.body.email}','${req.body.pass}',
@@ -37,5 +49,7 @@ app.get("/getUser/:id", bodyparser.json(), function (req, res) {
     res.send(result);
   });
 });
+
+
 
 app.listen(8000, console.log("listening 8000"));

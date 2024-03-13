@@ -1,7 +1,7 @@
 POST http://localhost:8000/signup
 Content-Type: application/json
 
-{"firstname":"praise",
+{"firstname":"john",
 "lastname":"dania",
 "email":"dania@gmail.com",
 "pass":"987",
@@ -18,5 +18,12 @@ Content-Type: application/json
 
 
 ###
-GET http://localhost:8000/getUser/1
+GET https://git-github-class-1.onrender.com/getUser/1
+{  "from":"praisdania@gmail.com" , 
+  "to": "developerjohnpaul@gmail.com",
+  "subject": "testing",
+  "body": "new mail from",}
+
+  ###
+  
 

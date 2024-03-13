@@ -15,12 +15,16 @@ const transporter = nodemailer.createTransport({
       from:"praisdania@gmail.com" , 
       to: "omodania393@gmail.com",
       subject: "testing",
-      text: "successfully sent"};
+      text: "successfully sent"
+   };
  
       transporter.sendMail(message,function(error, result){
        if(error){console.log(error)}
          else{console.log(result)}
        }
       );
+
+    
+
 
     

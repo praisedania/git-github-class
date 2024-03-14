@@ -23,7 +23,6 @@ const con = mysql.createPool({
 const upload = multer({
   dest: "./upload/images",
 })
-const test = "john"
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
@@ -31,20 +30,6 @@ const transporter = nodemailer.createTransport({
     pass: 'qqbqojgnvjzfqtji'
   }
 });
-
-function mailOptionCred(from, to, subject, body) {
-  const message = {
-    from,
-    to,
-    subject,
-    body
-  };
-
-  return message;
-
-}
-
-const myMessage = mailOptionCred("praisdania@gmail.com", "developerjohnpaul@gmail.com", "testing", "new mail from")
 
 
 /********************ENDPOINT ********************/
@@ -59,10 +44,7 @@ app.post("/signup", bodyparser.json(), function (req, res) {
   });
 });
 app.get("/test", bodyparser.json(), function (req, res) {
-
-
     res.send("yes");
-
 });
 
 app.get("/login", bodyparser.json(), function (req, res) {
@@ -84,12 +66,13 @@ app.get("/getUser/:id", bodyparser.json(), function (req, res) {
 });
 
 app.post("/mailDelivery", bodyparser.json(), function (req, res) {
-  const { from, to, subject, body } = req.body
+  const { from, to,subject, body,reply } = req.body
   const message = {
     from,
     to,
     subject,
-    body
+    body,
+    reply
   };
   transporter.sendMail(message, function (error, result) {
     if (error) { console.log(error) }
@@ -98,6 +81,22 @@ app.post("/mailDelivery", bodyparser.json(), function (req, res) {
   );
 });
 
+
+app.post("/mailDelivery", bodyparser.json(), function (req, res) {
+  const { from, to,subject, body,reply } = req.body
+  const message = {
+    from,
+    to:("emails"),
+    subject,
+    body,
+    reply
+  };
+  transporter.sendMail(message, function (error, result) {
+    if (error) { console.log(error) }
+    else { console.log(result) }
+  }
+  );
+});
 
 
 app.listen(8000, console.log("listening 8000"));

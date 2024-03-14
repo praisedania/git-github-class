@@ -3,7 +3,7 @@ Content-Type: application/json
 
 {"firstname":"john",
 "lastname":"dania",
-"email":"dania@gmail.com",
+"email":["dania@gmail.com","josjdjdj"],
 "pass":"987",
 "gender":"female"}
 
@@ -20,6 +20,26 @@ Content-Type: application/json
 ###
 GET https://git-github-class-1.onrender.com/getUser/1
 
-  ###
-  
+
+###
+
+
+  POST http://localhost:8000/mailDelivery
+Content-Type: application/json
+
+{"from":"praisdania@gmail",
+"to":["omodania393@gmail.com","kennedymarvellous001@gmail.com"],
+"subject":"test run",
+"body":"it was scuccesful",
+"reply":"praisdania@gmail.com"}
+
+###
+ POST http://localhost:8000/mailDelivery
+Content-Type: application/json
+
+{"from":"praisdania@gmail",
+"to":"kennedymarvellous001@gmail.com",
+"subject":"test run",
+"body":"it was scuccesful",
+"reply":"praisdania@gmail.com"}
 

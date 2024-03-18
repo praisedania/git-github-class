@@ -21,25 +21,29 @@ Content-Type: application/json
 GET https://git-github-class-1.onrender.com/getUser/1
 
 
+
+
+
 ###
-
-
-  POST http://localhost:8000/mailDelivery
+  POST http://localhost:8000/mailDelivery2
 Content-Type: application/json
 
 {"from":"praisdania@gmail",
 "to":["omodania393@gmail.com","kennedymarvellous001@gmail.com"],
 "subject":"test run",
-"body":"it was scuccesful",
-"reply":"praisdania@gmail.com"}
+"body":"it was succesful",
+"senderEmail": "omodanai393@gmail.com"}
+
+
+
 
 ###
  POST http://localhost:8000/mailDelivery
-Content-Type: application/json
+Content-Type: application/json 
 
 {"from":"praisdania@gmail",
-"to":"kennedymarvellous001@gmail.com",
+"to":"omodania393@gmail.com",
 "subject":"test run",
-"body":"it was scuccesful",
-"reply":"praisdania@gmail.com"}
+"text":"it was succesful"
+}
 

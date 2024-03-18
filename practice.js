@@ -12,7 +12,7 @@ const nodemailer = require("nodemailer");
 const app = express();
 
 
-app.use(cors({origin:"*"}));
+app.use(cors({ origin: "*" }));
 const con = mysql.createPool({
   host: "127.0.0.1",
   user: "root",
@@ -44,7 +44,7 @@ app.post("/signup", bodyparser.json(), function (req, res) {
   });
 });
 app.get("/test", bodyparser.json(), function (req, res) {
-    res.send("yes");
+  res.send("yes");
 });
 
 app.get("/login", bodyparser.json(), function (req, res) {
@@ -66,13 +66,12 @@ app.get("/getUser/:id", bodyparser.json(), function (req, res) {
 });
 
 app.post("/mailDelivery", bodyparser.json(), function (req, res) {
-  const { from, to,subject, body,reply } = req.body
+  const { from, to, subject, text, } = req.body
   const message = {
     from,
     to,
     subject,
-    body,
-    reply
+    text,
   };
   transporter.sendMail(message, function (error, result) {
     if (error) { console.log(error) }
@@ -82,14 +81,15 @@ app.post("/mailDelivery", bodyparser.json(), function (req, res) {
 });
 
 
-app.post("/mailDelivery", bodyparser.json(), function (req, res) {
-  const { from, to,subject, body,reply } = req.body
+app.post("/mailDelivery2", bodyparser.json(), function (req, res) {
+  const { from, to, subject, body, senderEmail } = req.body
   const message = {
     from,
-    to:("emails"),
+    to,
     subject,
-    body,
-    reply
+    text: body,
+    replyTo: senderEmail
+
   };
   transporter.sendMail(message, function (error, result) {
     if (error) { console.log(error) }

@@ -1,0 +1,59 @@
+
+POST http://localhost:4000/signup
+Content-Type: application/json
+
+{"firstname":"Praise",
+"lastname":"Dania",
+"DateOfBirth":"April 11",
+"email":["praisdania@gmail.com"],
+"pass":"123"
+}
+
+###
+POST http://localhost:4000/signup
+Content-Type: application/json
+
+{"firstname":"Marvelous",
+"lastname":"odaise",
+"DateOfBirth":"may 12",
+"email":["omodania393@gmail.com"],
+"pass":"123"
+}
+
+
+###
+GET http://localhost:4000/login
+Content-Type: application/json
+
+{"email":"praisdania@gmail.com",
+"pass":"123"}
+
+
+###
+GET https://localhost:4000/getUser/1
+
+###
+POST http://localhost:4000/posts
+Content-Type: application/json
+
+{"id":"1",
+"content":"Hello world"
+}
+
+###
+POST http://localhost:4000/posts/:postid/likes
+Content-Type: application/json
+
+{"post_id":"6",
+"user_id":"1"
+}
+
+
+###
+POST http://localhost:4000/chats
+Content-Type: application/json
+
+{"sender_id":"1",
+"recipient_id":"2",
+"message":"Hello"
+}

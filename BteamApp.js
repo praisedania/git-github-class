@@ -62,8 +62,8 @@ app.post("/posts", bodyparser.json(), function (req, res) {
 });
 
  app.post("/posts/:postid/likes", bodyparser.json(), function (req, res) {
-   const { post_id, } = req.params;
-  const { user_id, } = req.body;
+   const { post_id, } = req.params.post_id;
+  const { user_id, } = req.body.user_id;
   var sql = `INSERT INTO post_likes(post_id,users_id)
      VALUES('${post_id}','${user_id}')`;
   con.query(sql, function (err, result) {
@@ -74,8 +74,8 @@ app.post("/posts", bodyparser.json(), function (req, res) {
 
 
 app.post("/posts/:postid/comments", bodyparser.json(), function (req, res) {
-  const { post_id, } = req.params;
-  const { users_id, comment_text } = req.body;
+  const { post_id, } = req.params.post_id;
+  const { users_id, comment_text } = req.body.user_id;
   var sql = `INSERT INTO post_comments(post_id,users_id)
     VALUES('${post_id}','${users_id}','${comment_text})`;
   con.query(sql, function (err, result) {

@@ -3,7 +3,7 @@ Content-Type: application/json
 
 {"firstname":"john",
 "lastname":"dania",
-"email":["dania@gmail.com","josjdjdj"],
+"email":["omodania393@gmail.com"]
 "pass":"987",
 "gender":"female"}
 
@@ -13,14 +13,16 @@ Content-Type: application/json
 GET http://localhost:8000/login
 Content-Type: application/json
 
-{"email":"dania@gmail.com",
+{"email":"omodania393@gmail.com",
 "pass":"987"}
 
 
 ###
-GET https://git-github-class-1.onrender.com/getUser/1
+GET http://localhost:8000/getUser/1
 
 
+###
+POST https://git-github-class-1.onrender.com/mailDelivery2
 
 
 

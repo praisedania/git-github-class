@@ -21,7 +21,7 @@ const con = mysql.createPool({
   port: "3306",
 });
 const upload = multer({
-  dest: "./upload/images",
+
 })
 const transporter = nodemailer.createTransport({
   service: 'gmail',
@@ -56,14 +56,7 @@ app.get("/login", bodyparser.json(), function (req, res) {
   });
 });
 
-app.get("/getUser/:id", bodyparser.json(), function (req, res) {
-  var sql = `SELECT * FROM users
-    WHERE id = '${req.params.id}'`;
-  con.query(sql, function (err, result) {
-    if (err) throw err;
-    res.send(result);
-  });
-});
+
 
 app.post("/mailDelivery", bodyparser.json(), function (req, res) {
   const { from, to, subject, text, } = req.body

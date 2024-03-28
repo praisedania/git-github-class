@@ -1,4 +1,14 @@
 
+ POST http://localhost:4000/send_otp
+Content-Type: application/json 
+
+{"from":"praidania@gmail.com",
+"to":"omodania393@gmail.com",
+"subject":"otp",
+"text":"email confirmation"
+}
+
+###
 POST http://localhost:4000/signup
 Content-Type: application/json
 
@@ -28,32 +38,87 @@ Content-Type: application/json
 {"email":"praisdania@gmail.com",
 "pass":"123"}
 
-
 ###
-GET https://localhost:4000/getUser/1
+GET http://localhost:4000/getUser/1
 
 ###
 POST http://localhost:4000/posts
 Content-Type: application/json
 
-{"id":"1",
-"content":"Hello world"
+{"user_id":"1",
+"content":"Hello world, its great to be back"
 }
 
 ###
-POST http://localhost:4000/posts/:postid/likes
+GET http://localhost:4000/posts
 Content-Type: application/json
 
-{"post_id":"6",
+{"user_id":"1"
+}
+
+###
+POST http://localhost:4000/likes
+Content-Type: application/json
+
+{
+"user_id":"1"
+}
+###
+GET http://localhost:4000/allLikes
+Content-Type: application/json
+
+{
+"post_id":"1"
+}
+
+###
+DELETE  http://localhost:4000/deletelikes
+Content-Type: application/json
+
+{
 "user_id":"1"
 }
 
+###
+POST http://localhost:4000/comments
+Content-Type: application/json
+
+{
+"user_id":"2",
+"content":"welcome back"
+}
+
+###
+GET http://localhost:4000/allComments
+Content-Type: application/json
+
+{
+"post_id":"1"
+}
+
+###
+DELETE  http://localhost:4000/deletecomments
+Content-Type: application/json
+
+{
+"user_id":"2",
+"content":"welcome back"
+}
 
 ###
 POST http://localhost:4000/chats
 Content-Type: application/json
 
 {"sender_id":"1",
-"recipient_id":"2",
-"message":"Hello"
+"reciever_id":"2",
+"message":"Hello there"
+}
+
+
+###
+GET http://localhost:4000/chats
+Content-Type: application/json
+
+
+{"sender_id":"1"
 }
